@@ -26,10 +26,21 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    text-decoration: underline; 
+}
+
 section {
     padding: 40px;
-    margin: 20px;
+    margin: 20px auto;
     background-color: white;
+    max-width: 800px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+section h2 {
+    color: #333;
 }
 
 footer {
@@ -37,4 +48,19 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 20px;
+        margin: 10px;
+    }
 }
