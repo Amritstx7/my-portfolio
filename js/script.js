@@ -4,12 +4,12 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         const details = button.nextElementSibling;
 
-        if (details.style.display === "none") {
-            details.style.display = "block";
-            button.textContent = "Hide Details";
-        } else {
+        if (details.style.display === "block") {
             details.style.display = "none";
             button.textContent = "Show Details";
+        } else {
+            details.style.display = "block";
+            button.textContent = "Hide Details";
         }
     });
 });
@@ -36,4 +36,38 @@ form.addEventListener("submit", function(e) {
 
     error.textContent = "";
     alert("Form submitted successfully!");
+});
+
+// DARK MODE
+const toggleBtn = document.getElementById("darkModeToggle");
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+});
+
+// FILTER PROJECTS
+function filterProjects(category) {
+    const projects = document.querySelectorAll(".project");
+
+    projects.forEach(project => {
+        if (category === "all") {
+            project.style.display = "block";
+        } else {
+            project.style.display =
+                project.dataset.category === category ? "block" : "none";
+        }
+    });
+}
+
+// SCROLL ANIMATION
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 80) {
+            section.classList.add("show");
+        }
+    });
 });

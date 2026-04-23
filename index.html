@@ -12,6 +12,8 @@
 <header>
     <h1>Amrit Tiwana</h1>
 
+    <button id="darkModeToggle">Toggle Theme</button>
+
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
@@ -24,26 +26,32 @@
 <section id="about">
     <h2>About Me</h2>
     <p>
-        Hi, my name is Amrit. I am learning web development and building my first portfolio website.
+        Hi, my name is Amrit. I am a Grade 12 student learning web development. I build responsive and interactive websites using HTML, CSS, and JavaScript.
     </p>
 </section>
 
 <section id="projects">
     <h2>Projects</h2>
 
-    <div class="project">
+    <div id="filterButtons">
+        <button onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('html')">HTML/CSS</button>
+        <button onclick="filterProjects('js')">JavaScript</button>
+    </div>
+
+    <div class="project" data-category="html">
         <h3>Project 1</h3>
         <button class="toggle-btn">Show Details</button>
-        <p class="project-details" style="display: none;">
+        <p class="project-details">
             This project focuses on HTML and CSS fundamentals.
         </p>
     </div>
 
-    <div class="project">
+    <div class="project" data-category="js">
         <h3>Project 2</h3>
         <button class="toggle-btn">Show Details</button>
-        <p class="project-details" style="display: none;">
-            This project focuses on layout and styling techniques.
+        <p class="project-details">
+            This project focuses on JavaScript interactivity and layout design.
         </p>
     </div>
 
@@ -53,17 +61,11 @@
     <h2>Contact</h2>
 
     <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name">
-        <br><br>
-
-        <input type="email" id="email" placeholder="Your Email">
-        <br><br>
-
-        <textarea id="message" placeholder="Your Message"></textarea>
-        <br><br>
+        <input type="text" id="name" placeholder="Your Name"><br><br>
+        <input type="email" id="email" placeholder="Your Email"><br><br>
+        <textarea id="message" placeholder="Your Message"></textarea><br><br>
 
         <button type="submit">Send</button>
-
         <p id="error" style="color: red;"></p>
     </form>
 </section>
