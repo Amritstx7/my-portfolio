@@ -1,4 +1,4 @@
-/* smooth scroll */
+ /* smooth scroll */
 html {
     scroll-behavior: smooth;
 }
@@ -28,10 +28,6 @@ body {
 
 .light-mode nav ul li a {
     color: #333;
-}
-
-.light-mode .project {
-    background-color: rgba(0,0,0,0.08);
 }
 
 /* header */
@@ -85,8 +81,16 @@ section.show {
     padding: 15px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 10px;
+
+    transition: all 0.3s ease;
 }
 
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* project details */
 .project-details {
     display: none;
 }
